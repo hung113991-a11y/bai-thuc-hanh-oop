@@ -3,9 +3,9 @@ using namespace std;
 
 string toUpper(string s)
 {
-    for (int i = 0; i < s.length(); i++)
+    for (int i = 0; i < (int)s.length(); i++)
     {
-        s[i] = toupper(s[i]);
+        s[i] = toupper((unsigned char)s[i]);
     }
     return s;
 }
@@ -117,12 +117,12 @@ private:
 public:
     ParkingLot(){
     	parkID=0;
-    	size="";
+    	size = 'S';
     	co1=co2=co3=false;
 	}
     ParkingLot(int ID, char s){
     	parkID=ID;
-    	size=toUpper(s);
+    	size=toUpper(string(1,s))[0];
     	co1=co2=co3=false;
 	}
 
